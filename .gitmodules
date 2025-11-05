@@ -1,3 +1,6 @@
 [submodule "KernelSU"]
 	path = KernelSU
 	url = https://github.com/ShirkNeko/SukiSU-Ultra
+[submodule "KernelPatch"]
+	path = Patch
+	url = https://github.com/BedrockEgg/NonGKI_Kernel_Build_2nd.git
