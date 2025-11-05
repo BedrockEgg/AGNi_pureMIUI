@@ -1,0 +1,22 @@
+name: Build Kernel
+
+permissions:
+  contents: write
+  actions: write
+
+on:
+  workflow_call:
+
+jobs:
+  # OPPO
+  ## Oneplus
+  build-device-name-systemos-android-version:
+    name: "Device Name (SystemOS Android Version) (Kernel Name)"
+    strategy:
+      fail-fast: true
+    uses: ./.github/workflows/build-sample.yml
+    secrets: inherit
+
+  # Xiaomi
+
+  ## Redmi
