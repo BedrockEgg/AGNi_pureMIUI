@@ -57,9 +57,3 @@ runs:
             sed -i 's|"/dev/ashmem (deleted)"|"/system/framework/framework-res.apk"|' fs/proc/base.c
             echo "[+] Changed ashmem to framework-res."
           fi
-        
-          # 修复 vdso32 target
-          sed -i -E '/^[[:space:]]*VDSO32_CC[[:space:]]*.*:=.*/s/$/ --target=arm-linux-gnueabihf/' \
-            arch/arm64/kernel/vdso32/Makefile
-          # 验证
-          grep -n ^VDSO32_CC arch/arm64/kernel/vdso32/Makefile || echo "VDSO32_CC not found!"
