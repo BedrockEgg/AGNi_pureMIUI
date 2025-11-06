@@ -10,12 +10,12 @@ env:
   DEVICE_CODENAME : "haydn"
 
   CUSTOM_CMDS : "CLANG_TRIPLE=aarch64-linux-gnu-"
-  EXTRA_CMDS : "LD=ld.lld LLVM=1 LLVM_IAS=1 CROSS_COMPILE_COMPAT=arm-linux-gnueabihf- AR=llvm-ar NM=llvm-nm OBJDUMP=llvm-objdump STRIP=llvm-strip OBJCOPY=llvm-objcopy READELF=llvm-readelf"
+  EXTRA_CMDS : "LD=ld.lld LLVM=1 LLVM_IAS=1 CROSS_COMPILE_COMPAT=arm-linux-gnueabihf- CROSS_COMPILE=aarch64-linux-android- CLANG_TRIPLE=aarch64-linux-gnu- AR=llvm-ar NM=llvm-nm OBJDUMP=llvm-objdump STRIP=llvm-strip OBJCOPY=llvm-objcopy READELF=llvm-readelf"
 
   KERNEL_SOURCE : "https://github.com/BedrockEgg/AGNi_pureMIUI.git"
   KERNEL_BRANCH : "AGNi_haydn_MIUI_ST"
 
-  CLANG_SOURCE : "https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.5/LLVM-21.1.5-Linux-X64.tar.xz"
+  CLANG_SOURCE : "https://github.com/SuleMareVientu/Qualcomm_Snapdragon_LLVM_ARM_Toolchain_OEM/releases/download/18.0.4.0/18.0.4.0.zip"
   CLANG_BRANCH : ""
 
   GCC_GNU : false
