@@ -32,6 +32,7 @@ runs:
         shell: bash
         run: |
           cd $GITHUB_WORKSPACE/device_kernel/
+          export LD=$(which ld.lld || echo ld)
 
           # Function
           BUILD_PROCESS(){
