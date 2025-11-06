@@ -33,6 +33,13 @@ runs:
         run: |
           cd $GITHUB_WORKSPACE/device_kernel/
 
+          #修复工具链
+          CLANG_DIR=$(find $GITHUB_WORKSPACE -maxdepth 1 -type d -name 'clang-*' | sort -t: -k2 -r | head -n1)
+          export PATH=$CLANG_DIR/bin:$PATH
+          export LLVM=1 LLVM_IAS=1 LD=ld.lld
+          export AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy \
+                 OBJDUMP=llvm-objdump READELF=llvm-readelf STRIP=llvm-strip
+
           # Function
           BUILD_PROCESS(){
           if [ -n "$1" ]; then
