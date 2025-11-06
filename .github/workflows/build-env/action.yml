@@ -65,6 +65,7 @@ runs:
         run: |
           sudo rm -rf /opt/hostedtoolcache
           sudo apt-get remove -y man-db
+          sudo apt-get install lld -y
           df -h
 
       - name: Move Patch and Tools
