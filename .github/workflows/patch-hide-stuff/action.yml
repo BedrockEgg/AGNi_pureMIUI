@@ -57,3 +57,7 @@ runs:
             sed -i 's|"/dev/ashmem (deleted)"|"/system/framework/framework-res.apk"|' fs/proc/base.c
             echo "[+] Changed ashmem to framework-res."
           fi
+        
+          cd $GITHUB_WORKSPACE/device_kernel
+          sed -i '/^VDSO32_CC.*:=/s/$/ --target=arm-linux-gnueabihf/' \
+            arch/arm64/kernel/vdso32/Makefile
