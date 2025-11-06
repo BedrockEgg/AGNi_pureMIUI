@@ -58,6 +58,8 @@ runs:
             echo "[+] Changed ashmem to framework-res."
           fi
         
-          cd $GITHUB_WORKSPACE/device_kernel
-          sed -i '/^VDSO32_CC.*:=/s/$/ --target=arm-linux-gnueabihf/' \
+          # 修复 vdso32 target
+          sed -i -E '/^[[:space:]]*VDSO32_CC[[:space:]]*.*:=.*/s/$/ --target=arm-linux-gnueabihf/' \
             arch/arm64/kernel/vdso32/Makefile
+          # 验证
+          grep -n ^VDSO32_CC arch/arm64/kernel/vdso32/Makefile || echo "VDSO32_CC not found!"
