@@ -482,3 +482,4 @@ runs:
           echo "Available tools in PATH: $(which llvm-ar || echo 'NOT FOUND') $(which aarch64-elf-ar || echo 'NOT FOUND')"
           ls -la $GITHUB_WORKSPACE/clang/bin | grep llvm || echo "No LLVM tools in clang"
           ls -la $GITHUB_WORKSPACE/gcc-64/bin | head -5 || echo "No gcc-64"
+          ls -d */
