@@ -33,22 +33,6 @@ runs:
         run: |
           cd $GITHUB_WORKSPACE/device_kernel/
 
-          #修复工具链
-
-          # 找到 clang 目录（自动下载）
-          CLANG_DIR=$(find $GITHUB_WORKSPACE -maxdepth 1 -type d -name 'clang-*' | sort -t: -k2 -r | head -n1)
-          export PATH=$CLANG_DIR/bin:$PATH
-
-          # 强制使用裸 LLVM 工具名，禁止内核拼前缀
-          export LLVM=1 LLVM_IAS=1 LD=ld.lld
-          export AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy \
-                 OBJDUMP=llvm-objdump READELF=llvm-readelf STRIP=llvm-strip
-
-          # 置空 CROSS_COMPILE，防止内核拼出 aarch64-elf-llvm-*
-          export CROSS_COMPILE=
-          export CROSS_COMPILE_COMPAT=arm-linux-gnueabihf-
-
-          
           # Function
           BUILD_PROCESS(){
           if [ -n "$1" ]; then
