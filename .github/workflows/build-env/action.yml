@@ -64,7 +64,7 @@ runs:
         shell: bash
         run: |
           sudo rm -rf /opt/hostedtoolcache
-          apt-get remove man
+          sudo apt-get remove -y man
           df -h
 
       - name: Move Patch and Tools
