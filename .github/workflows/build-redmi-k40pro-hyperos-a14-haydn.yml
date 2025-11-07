@@ -104,6 +104,9 @@ jobs:
       - name: ⌛️ Compilation environment preparation
         uses: ./.github/workflows/build-env
 
+      - name: ⚠️ Debug
+        run: echo "***Stop workflow for debug***" && exit 1
+
       - name: ⚙️ Get neccssary tools
         uses: ./.github/workflows/build-ready
 
