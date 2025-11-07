@@ -32,7 +32,6 @@ runs:
         shell: bash
         run: |
           cd $GITHUB_WORKSPACE/device_kernel/
-          export LD=$(which ld.lld || echo ld)
 
           # Function
           BUILD_PROCESS(){
@@ -46,7 +45,10 @@ runs:
           if [ -n "${{ env.CLANG_SOURCE }}" ]; then
             export PATH=$GITHUB_WORKSPACE/clang-custom/bin:$PATH
           fi
-
+          export CROSS_COMPILE=/clang-custom/Snapdragon-llvm-19.0.0-linux64/bin/aarch64-linux-android-
+          export CROSS_COMPILE_ARM32=/clang-custom/Snapdragon-llvm-19.0.0-linux64/bin/arm-linux-androideabi-
+          export CLANG_TRIPLE=aarch64-linux-gnu
+          export CROSS_COMPILE_COMPAT=arm-linux-androideabi-
           if [[ "$BUILD_CLANG" == "true" ]]; then
             echo "========================"
             echo "=Read Defconfig (Clang)="
@@ -101,6 +103,10 @@ runs:
                 echo "=================================="
                 export "${{ env.GCC_64 }}"
                 export "${{ env.GCC_32 }}"
+                export CROSS_COMPILE=/clang-custom/Snapdragon-llvm-19.0.0-linux64/bin/aarch64-linux-android-
+                export CROSS_COMPILE_ARM32=/clang-custom/Snapdragon-llvm-19.0.0-linux64/bin/arm-linux-androideabi-
+                export CLANG_TRIPLE=aarch64-linux-gnu
+                export CROSS_COMPILE_COMPAT=arm-linux-androideabi-
                 BUILD_PROCESS true
             elif [ "${{ env.GNU_GCC }}" == "true" ]; then
                 echo "============================"
@@ -108,12 +114,20 @@ runs:
                 echo "============================"
                 export "${{ env.GCC_64 }}"
                 export "${{ env.GCC_32 }}"
+                export CROSS_COMPILE=/clang-custom/Snapdragon-llvm-19.0.0-linux64/bin/aarch64-linux-android-
+                export CROSS_COMPILE_ARM32=/clang-custom/Snapdragon-llvm-19.0.0-linux64/bin/arm-linux-androideabi-
+                export CLANG_TRIPLE=aarch64-linux-gnu
+                export CROSS_COMPILE_COMPAT=arm-linux-androideabi-
                 BUILD_PROCESS true
             elif [ -n "${{ env.GCC_64 }}" ]; then
                 echo "==========================="
                 echo "=Detected Clang and GCC 64="
                 echo "==========================="
                 export "${{ env.GCC_64 }}"
+                export CROSS_COMPILE=/clang-custom/Snapdragon-llvm-19.0.0-linux64/bin/aarch64-linux-android-
+                export CROSS_COMPILE_ARM32=/clang-custom/Snapdragon-llvm-19.0.0-linux64/bin/arm-linux-androideabi-
+                export CLANG_TRIPLE=aarch64-linux-gnu
+                export CROSS_COMPILE_COMPAT=arm-linux-androideabi-
                 BUILD_PROCESS true
             else
                 echo "====================="
@@ -129,6 +143,10 @@ runs:
                 echo "=================================="
                 export "${{ env.GCC_64 }}"
                 export "${{ env.GCC_32 }}"
+                export CROSS_COMPILE=/clang-custom/Snapdragon-llvm-19.0.0-linux64/bin/aarch64-linux-android-
+                export CROSS_COMPILE_ARM32=/clang-custom/Snapdragon-llvm-19.0.0-linux64/bin/arm-linux-androideabi-
+                export CLANG_TRIPLE=aarch64-linux-gnu
+                export CROSS_COMPILE_COMPAT=arm-linux-androideabi-
                 BUILD_PROCESS
             elif [ "${{ env.GNU_GCC }}" == "true" ]; then
                 echo "========================"
@@ -136,12 +154,20 @@ runs:
                 echo "========================"
                 export "${{ env.GCC_64 }}"
                 export "${{ env.GCC_32 }}"
+                export CROSS_COMPILE=/clang-custom/Snapdragon-llvm-19.0.0-linux64/bin/aarch64-linux-android-
+                export CROSS_COMPILE_ARM32=/clang-custom/Snapdragon-llvm-19.0.0-linux64/bin/arm-linux-androideabi-
+                export CLANG_TRIPLE=aarch64-linux-gnu
+                export CROSS_COMPILE_COMPAT=arm-linux-androideabi-
                 BUILD_PROCESS
             elif [ -n "${{ env.GCC_64 }}" ]; then
                 echo "============================"
                 echo "=Detected ARM64 Only GCC 64="
                 echo "============================"
                 export "${{ env.GCC_64 }}"
+                export CROSS_COMPILE=/clang-custom/Snapdragon-llvm-19.0.0-linux64/bin/aarch64-linux-android-
+                export CROSS_COMPILE_ARM32=/clang-custom/Snapdragon-llvm-19.0.0-linux64/bin/arm-linux-androideabi-
+                export CLANG_TRIPLE=aarch64-linux-gnu
+                export CROSS_COMPILE_COMPAT=arm-linux-androideabi-
                 BUILD_PROCESS
             fi
 
@@ -157,6 +183,10 @@ runs:
                 echo "=Detected ARM GCC 32="
                 echo "====================="
                 export "${{ env.GCC_32 }}"
+                export CROSS_COMPILE=/clang-custom/Snapdragon-llvm-19.0.0-linux64/bin/aarch64-linux-android-
+                export CROSS_COMPILE_ARM32=/clang-custom/Snapdragon-llvm-19.0.0-linux64/bin/arm-linux-androideabi-
+                export CLANG_TRIPLE=aarch64-linux-gnu
+                export CROSS_COMPILE_COMPAT=arm-linux-androideabi-
                 BUILD_PROCESS
             fi
 
