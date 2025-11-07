@@ -15,13 +15,13 @@ env:
   KERNEL_SOURCE : "https://github.com/BedrockEgg/AGNi_pureMIUI.git"
   KERNEL_BRANCH : "AGNi_haydn_MIUI_ST"
 
-  CLANG_SOURCE : "https://github.com/ruoqing501/SDclang-18.git"
-  CLANG_BRANCH : "18.0.0"
+  CLANG_SOURCE : "https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvYy85YmM5MzQyNzZjZmI4ODQ5L0VmSGp1ZGVGeTAxR2hwOS1HdGZFU1JrQkRIWUt0NVdENE9Pc0hPRnFTTzJhdFE.tar.gz"
+  CLANG_BRANCH : ""
 
   GCC_GNU : false
-  GCC_64_SOURCE : "https://github.com/mvaisakh/gcc-build/releases/download/18052025/eva-gcc-arm64-18052025.xz"
+  GCC_64_SOURCE : ""
   GCC_64_BRANCH : ""
-  GCC_32_SOURCE : "https://github.com/mvaisakh/gcc-build/releases/download/18052025/eva-gcc-arm-18052025.xz"
+  GCC_32_SOURCE : ""
   GCC_32_BRANCH : ""
 
   DEFCONFIG_SOURCE: ""
@@ -44,7 +44,7 @@ env:
 
   BOOT_SOURCE : ""
 
-  NEED_DTBO : false
+  NEED_DTBO : true
   NEED_SAFE_DTBO : false
 
   ROM_TEXT : "hyperos_a14"
