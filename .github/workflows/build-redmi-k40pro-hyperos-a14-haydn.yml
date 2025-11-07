@@ -16,7 +16,7 @@ env:
   KERNEL_BRANCH : "AGNi_haydn_MIUI_ST"
 
   CLANG_SOURCE : "https://github.com/ruoqing501/SDclang-18.git"
-  CLANG_BRANCH : ""
+  CLANG_BRANCH : "18.0.0"
 
   GCC_GNU : false
   GCC_64_SOURCE : "https://github.com/mvaisakh/gcc-build/releases/download/18052025/eva-gcc-arm64-18052025.xz"
