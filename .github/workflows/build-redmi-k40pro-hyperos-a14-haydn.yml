@@ -15,7 +15,7 @@ env:
   KERNEL_SOURCE : "https://github.com/BedrockEgg/AGNi_pureMIUI.git"
   KERNEL_BRANCH : "AGNi_haydn_MIUI_ST"
 
-  CLANG_SOURCE : "https://github.com/SuleMareVientu/Qualcomm_Snapdragon_LLVM_ARM_Toolchain_OEM/releases/download/18.0.4.0/18.0.4.0.zip"
+  CLANG_SOURCE : "https://github.com/ruoqing501/SDclang-18.git"
   CLANG_BRANCH : ""
 
   GCC_GNU : false
@@ -104,8 +104,8 @@ jobs:
       - name: ⌛️ Compilation environment preparation
         uses: ./.github/workflows/build-env
 
-      - name: ⚠️ Debug
-        run: echo "***Stop workflow for debug***" && exit 1
+      # - name: ⚠️ Debug
+      #  run: echo "***Stop workflow for debug***" && exit 1
 
       - name: ⚙️ Get neccssary tools
         uses: ./.github/workflows/build-ready
