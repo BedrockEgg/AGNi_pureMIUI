@@ -10,7 +10,7 @@ env:
   DEVICE_CODENAME : "haydn"
 
   CUSTOM_CMDS : "CLANG_TRIPLE=aarch64-linux-gnu-"
-  EXTRA_CMDS : "LD=ld.lld LLVM=1 LLVM_IAS=1"
+  EXTRA_CMDS : "LD=ld.lld LLVM=1 LLVM_IAS=1 HOSTCC=gcc HOSTCXX=g++"
 
   KERNEL_SOURCE : "https://github.com/BedrockEgg/AGNi_pureMIUI.git"
   KERNEL_BRANCH : "AGNi_haydn_MIUI_ST"
