@@ -1,4 +1,4 @@
-name: Build Redmi K40 Pro (Haydn)(Hyperod A14)
+name: Build Redmi K40 Pro (Haydn)(Hyperos A14)
 
 on:
   workflow_call:
